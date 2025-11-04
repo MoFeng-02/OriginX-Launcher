@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OriginX", "OriginX\OriginX.csproj", "{554B827D-8790-4246-B1BF-2B1484DC0D71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Minecraft", "Minecraft", "{7AEF27AB-8FA7-001E-CE53-42CF1C08BE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftLaunch.Base", "..\MinecraftLaunch-4.0.x\MinecraftLaunch.Base\MinecraftLaunch.Base.csproj", "{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftLaunch", "..\MinecraftLaunch-4.0.x\MinecraftLaunch\MinecraftLaunch.csproj", "{86E7623A-D01B-00FC-BD30-52E474700063}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{985E24C5-1432-4FC6-B0BB-FC76885A1CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFToolkit.Minecraft", "..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\Minecraft\MFToolkit.Minecraft\MFToolkit.Minecraft.csproj", "{998C2377-661D-E987-631F-A6CB17D3DB7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{554B827D-8790-4246-B1BF-2B1484DC0D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554B827D-8790-4246-B1BF-2B1484DC0D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554B827D-8790-4246-B1BF-2B1484DC0D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554B827D-8790-4246-B1BF-2B1484DC0D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E7623A-D01B-00FC-BD30-52E474700063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E7623A-D01B-00FC-BD30-52E474700063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E7623A-D01B-00FC-BD30-52E474700063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E7623A-D01B-00FC-BD30-52E474700063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5} = {7AEF27AB-8FA7-001E-CE53-42CF1C08BE1B}
+		{86E7623A-D01B-00FC-BD30-52E474700063} = {7AEF27AB-8FA7-001E-CE53-42CF1C08BE1B}
+		{998C2377-661D-E987-631F-A6CB17D3DB7D} = {985E24C5-1432-4FC6-B0BB-FC76885A1CE2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78D1377C-6FF5-4BD3-A608-E4B74CD6D0F8}
+	EndGlobalSection
+EndGlobal

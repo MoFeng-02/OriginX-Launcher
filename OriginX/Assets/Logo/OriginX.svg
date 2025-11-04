@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <!-- 基础立方体结构 -->
+    <path d="M256 96L96 256l160 160 160-160z" fill="#5D3A28"/>
+    <path d="M256 96l160 160H96z" fill="#724D35"/>
+    <path d="M256 96v320L96 256z" fill="#75B94F"/>
+    
+    <!-- 像素化草地纹理 -->
+    <rect x="192" y="128" width="32" height="32" fill="#86C75E"/>
+    <rect x="288" y="192" width="32" height="32" fill="#6BB248"/>
+    <rect x="224" y="256" width="32" height="32" fill="#80C156"/>
+    
+    <!-- 启动器交互符号 -->
+    <polygon points="336,304 400,256 336,208" fill="#FFFFFF" stroke="#2D2D2D" stroke-width="8"/>
+    
+    <!-- 品牌文字标识 -->
+    <g transform="translate(140 380)" font-family="'Minecraftia', monospace" font-size="48">
+        <text fill="#E9ECEF" stroke="#2D2D2D" stroke-width="3">
+            <tspan x="0" y="0">ORIGIN</tspan>
+            <tspan x="288" y="0" fill="#75B94F">X</tspan>
+        </text>
+        <text x="132" y="48" fill="#ADB5BD" font-size="32">LAUNCHER</text>
+    </g>
+</svg>

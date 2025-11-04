@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="应用标题" xml:space="preserve">
+    <value>Origin X</value>
+  </data>
+  <data name="主页" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="用户" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="设置" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="您确定要退出吗" xml:space="preserve">
+    <value>Are you sure you want to exit?</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Close1" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="打开" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="开始" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="玩" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="游戏" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="开始游戏" xml:space="preserve">
+    <value>Play Game</value>
+  </data>
+  <data name="公开" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="源" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="代码" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="开放源代码" xml:space="preserve">
+    <value>Open Source Code</value>
+  </data>
+  <data name="许可证" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="存在" xml:space="preserve">
+    <value>Exist</value>
+  </data>
+  <data name="退出" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="取消" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="返回" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="登录Minecraft" xml:space="preserve">
+    <value>Login in Minecraft</value>
+  </data>
+  <data name="离线" xml:space="preserve">
+    <value>Off-line</value>
+  </data>
+  <data name="离线登录" xml:space="preserve">
+    <value>Offline Login</value>
+  </data>
+  <data name="微软" xml:space="preserve">
+    <value>Microsoft</value>
+  </data>
+  <data name="微软登录" xml:space="preserve">
+    <value>Microsoft Login</value>
+  </data>
+  <data name="登录" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="输入" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="输入角色名称" xml:space="preserve">
+    <value>Input Play Name</value>
+  </data>
+  <data name="输入电子邮件" xml:space="preserve">
+    <value>Input Email</value>
+  </data>
+  <data name="输入邮箱" xml:space="preserve">
+    <value>Input Mailbox</value>
+  </data>
+  <data name="输入密码" xml:space="preserve">
+    <value>Input Password</value>
+  </data>
+  <data name="切换账户" xml:space="preserve">
+    <value>Switch Account</value>
+  </data>
+  <data name="账户管理" xml:space="preserve">
+    <value>Account Manage</value>
+  </data>
+  <data name="提示" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="说明" xml:space="preserve">
+    <value>Explain</value>
+  </data>
+  <data name="帮助" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="角色名称" xml:space="preserve">
+    <value>Play Name</value>
+  </data>
+  <data name="账户" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="下载" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="最新" xml:space="preserve">
+    <value>Newest</value>
+  </data>
+  <data name="最新版本" xml:space="preserve">
+    <value>Latest Version</value>
+  </data>
+  <data name="旧测试版" xml:space="preserve">
+    <value>Old Beta</value>
+  </data>
+  <data name="旧Alpha版" xml:space="preserve">
+    <value>Old Alpha</value>
+  </data>
+  <data name="正式版" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="快照版" xml:space="preserve">
+    <value>Snapshot</value>
+  </data>
+  <data name="刷新" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="游戏名称" xml:space="preserve">
+    <value>Game Name</value>
+  </data>
+  <data name="游戏版本名称" xml:space="preserve">
+    <value>Game Version Name</value>
+  </data>
+  <data name="安装" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="预览" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="选择 Minecraft" xml:space="preserve">
+    <value>Select Minecraft</value>
+  </data>
+  <data name="搜索版本" xml:space="preserve">
+    <value>Search Version</value>
+  </data>
+  <data name="发布时间" xml:space="preserve">
+    <value>Release Time:</value>
+  </data>
+  <data name="步骤" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="选择 Mod 加载器" xml:space="preserve">
+    <value>Select Mod Loader</value>
+  </data>
+  <data name="当前选择" xml:space="preserve">
+    <value>Current selection:</value>
+  </data>
+  <data name="跳过加载器" xml:space="preserve">
+    <value>Skip Loader</value>
+  </data>
+  <data name="准备就绪" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="没有下载信息" xml:space="preserve">
+    <value>No download information</value>
+  </data>
+  <data name="最小长度" xml:space="preserve">
+    <value>Minimum Length: {0}</value>
+  </data>
+  <data name="名称格式错误" xml:space="preserve">
+    <value>Name format error</value>
+  </data>
+  <data name="MinecraftVersionInfo" xml:space="preserve">
+    <value>Minecraft version Information</value>
+  </data>
+  <data name="最大长度" xml:space="preserve">
+    <value>Maximum Length: {0}</value>
+  </data>
+  <data name="游戏版本" xml:space="preserve">
+    <value>Game Version</value>
+  </data>
+  <data name="加载器版本" xml:space="preserve">
+    <value>Loader Version</value>
+  </data>
+  <data name="空" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="版本名称" xml:space="preserve">
+    <value>Version Name</value>
+  </data>
+  <data name="后台下载" xml:space="preserve">
+    <value>Background Download</value>
+  </data>
+  <data name="退出登录" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="版本管理" xml:space="preserve">
+    <value>Version Manage</value>
+  </data>
+  <data name="视图模型实例与指定类型不匹配" xml:space="preserve">
+    <value>The view model instance does not match the specified type</value>
+  </data>
+  <data name="值不能为空" xml:space="preserve">
+    <value>{0}Cannot be empty, please specify a valid value</value>
+  </data>
+  <data name="授权代码不能为空" xml:space="preserve">
+    <value>Authorization code cannot be null or empty</value>
+  </data>
+  <data name="刷新Token不能为空" xml:space="preserve">
+    <value>Refresh token cannot be null or empty</value>
+  </data>
+  <data name="State不能为空" xml:space="preserve">
+    <value>State No Empty</value>
+  </data>
+</root>

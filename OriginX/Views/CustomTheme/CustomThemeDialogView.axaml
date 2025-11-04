@@ -1,0 +1,68 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             xmlns:vm="clr-namespace:OriginX.ViewModels.CustomTheme"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="OriginX.Views.CustomTheme.CustomThemeDialogView"
+             x:DataType="vm:CustomThemeDialogViewModel">
+    <suki:GroupBox Header="创建自定义颜色">
+        <ScrollViewer>
+            <StackPanel Spacing="20">
+                <!-- 主题名称输入 -->
+                <StackPanel Spacing="5">
+                    <TextBlock Text="主题名称" FontSize="14" Foreground="#666" />
+                    <TextBox
+                        Text="{Binding DisplayName, Mode=TwoWay}"
+                        Watermark="请输入主题名称"
+                        Padding="8"
+                        BorderBrush="#DDD"
+                        BorderThickness="1"
+                        CornerRadius="4" />
+                </StackPanel>
+
+                <!-- 主色调选择器 + 实时变色按钮（背景用主色调） -->
+                <StackPanel Spacing="5">
+                    <TextBlock Text="主色调" FontSize="14" Foreground="#666" />
+                    <ColorPicker
+                        Color="{Binding PrimaryColor, Mode=TwoWay}"
+                        IsColorPreviewVisible="True"
+                        Padding="5"
+                        Background="{Binding PrimaryBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4" />
+
+                    <!-- 这个按钮的背景会随主色调变化 -->
+                    <Button
+                        Height="36"
+                        Background="{Binding PrimaryBrush}"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="4" />
+                </StackPanel>
+
+                <!-- 强调色选择器 + 实时变色边框（边框用强调色） -->
+                <StackPanel Spacing="5">
+                    <TextBlock Text="强调色" FontSize="14" Foreground="#666" />
+                    <ColorPicker
+                        Color="{Binding AccentColor, Mode=TwoWay}"
+                        IsColorPreviewVisible="True"
+                        Padding="5"
+                        BorderBrush="{Binding AccentBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4" />
+
+                    <!-- 这个边框的颜色会随强调色变化 -->
+                    <Button
+                        Height="36"
+                        Background="{Binding AccentBrush}"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="4" />
+                </StackPanel>
+                <Button Command="{Binding TryCreateThemeCommand}" Content="创建主题" />
+            </StackPanel>
+        </ScrollViewer>
+    </suki:GroupBox>
+</UserControl>

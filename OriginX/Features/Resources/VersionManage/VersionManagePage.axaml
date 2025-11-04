@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mid="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:vm="clr-namespace:OriginX.ViewModels"
+             xmlns:versions="clr-namespace:OriginX.ViewModels.Versions"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="versions:VersionManageViewModel"
+             x:Class="OriginX.Features.Resources.VersionManage.VersionManagePage">
+    <Grid RowDefinitions="Auto,*">
+        <Grid ColumnDefinitions="*,*">
+            <StackPanel Orientation="Horizontal" Margin="15 0">
+                <mid:MaterialIcon Kind="FolderEyeOutline" Width="30" Height="30" Margin="5" />
+                <TextBlock Text="版本列表" VerticalAlignment="Center" />
+            </StackPanel>
+            <Button Grid.Column="1" Command="{Binding ToDownloadVersionCommand}" BorderThickness="0" HorizontalAlignment="Right" Margin="15 0">
+                <StackPanel Orientation="Horizontal">
+                    <mid:MaterialIcon Kind="FolderDownloadOutline" Width="30" Height="30" Margin="5" />
+                    <TextBlock Text="下载版本" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
+            <TextBox></TextBox>
+        </Grid>
+    </Grid>
+</UserControl>

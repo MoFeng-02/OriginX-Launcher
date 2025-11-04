@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="应用标题" xml:space="preserve">
+        <value>Origin X</value>
+    </data>
+  <data name="主页" xml:space="preserve">
+        <value>主页</value>
+    </data>
+  <data name="用户" xml:space="preserve">
+        <value>用户</value>
+    </data>
+  <data name="设置" xml:space="preserve">
+        <value>设置</value>
+    </data>
+  <data name="您确定要退出吗" xml:space="preserve">
+        <value>您确定要退出吗？</value>
+    </data>
+  <data name="Close" xml:space="preserve">
+        <value>关闭</value>
+    </data>
+  <data name="Close1" xml:space="preserve">
+        <value>关</value>
+    </data>
+  <data name="打开" xml:space="preserve">
+        <value>打开</value>
+    </data>
+  <data name="Off" xml:space="preserve">
+        <value>开</value>
+    </data>
+  <data name="On" xml:space="preserve">
+        <value>关</value>
+    </data>
+  <data name="开始" xml:space="preserve">
+        <value>开始</value>
+    </data>
+  <data name="玩" xml:space="preserve">
+        <value>玩</value>
+    </data>
+  <data name="游戏" xml:space="preserve">
+        <value>游戏</value>
+    </data>
+  <data name="开始游戏" xml:space="preserve">
+        <value>开始游戏</value>
+    </data>
+  <data name="公开" xml:space="preserve">
+        <value>公开</value>
+    </data>
+  <data name="源" xml:space="preserve">
+        <value>源</value>
+    </data>
+  <data name="代码" xml:space="preserve">
+        <value>代码</value>
+    </data>
+  <data name="开放源代码" xml:space="preserve">
+        <value>开放源代码</value>
+    </data>
+  <data name="许可证" xml:space="preserve">
+        <value>许可证</value>
+    </data>
+  <data name="存在" xml:space="preserve">
+        <value>存在</value>
+    </data>
+  <data name="退出" xml:space="preserve">
+        <value>退出</value>
+    </data>
+  <data name="取消" xml:space="preserve">
+        <value>取消</value>
+    </data>
+  <data name="返回" xml:space="preserve">
+        <value>返回</value>
+    </data>
+  <data name="登录Minecraft" xml:space="preserve">
+        <value>登录 Minecraft</value>
+    </data>
+  <data name="离线" xml:space="preserve">
+        <value>离线</value>
+    </data>
+  <data name="离线登录" xml:space="preserve">
+        <value>离线登录</value>
+    </data>
+  <data name="微软" xml:space="preserve">
+        <value>微软</value>
+    </data>
+  <data name="微软登录" xml:space="preserve">
+        <value>微软登录</value>
+    </data>
+  <data name="登录" xml:space="preserve">
+        <value>登录</value>
+    </data>
+  <data name="输入" xml:space="preserve">
+        <value>输入</value>
+    </data>
+  <data name="输入角色名称" xml:space="preserve">
+        <value>输入角色名称</value>
+    </data>
+  <data name="输入电子邮件" xml:space="preserve">
+        <value>输入电子邮件</value>
+    </data>
+  <data name="输入邮箱" xml:space="preserve">
+        <value>输入邮箱</value>
+    </data>
+  <data name="输入密码" xml:space="preserve">
+        <value>输入密码</value>
+    </data>
+  <data name="切换账户" xml:space="preserve">
+        <value>切换账户</value>
+    </data>
+  <data name="账户管理" xml:space="preserve">
+        <value>账户管理</value>
+    </data>
+  <data name="提示" xml:space="preserve">
+        <value>提示</value>
+    </data>
+  <data name="说明" xml:space="preserve">
+        <value>说明</value>
+    </data>
+  <data name="帮助" xml:space="preserve">
+        <value>帮助</value>
+    </data>
+  <data name="角色名称" xml:space="preserve">
+        <value>角色名称</value>
+    </data>
+  <data name="账户" xml:space="preserve">
+        <value>账户</value>
+    </data>
+  <data name="下载" xml:space="preserve">
+        <value>下载</value>
+    </data>
+  <data name="最新" xml:space="preserve">
+        <value>最新</value>
+    </data>
+  <data name="最新版本" xml:space="preserve">
+        <value>最新版本</value>
+    </data>
+  <data name="旧测试版" xml:space="preserve">
+        <value>旧测试版</value>
+    </data>
+  <data name="旧Alpha版" xml:space="preserve">
+        <value>旧Alpha版</value>
+    </data>
+  <data name="正式版" xml:space="preserve">
+        <value>正式版</value>
+    </data>
+  <data name="快照版" xml:space="preserve">
+        <value>快照版</value>
+    </data>
+  <data name="刷新" xml:space="preserve">
+        <value>刷新</value>
+    </data>
+  <data name="游戏名称" xml:space="preserve">
+        <value>游戏名称</value>
+    </data>
+  <data name="游戏版本名称" xml:space="preserve">
+        <value>游戏版本名称</value>
+    </data>
+  <data name="安装" xml:space="preserve">
+        <value>安装</value>
+    </data>
+  <data name="预览" xml:space="preserve">
+        <value>预览</value>
+    </data>
+  <data name="选择 Minecraft" xml:space="preserve">
+        <value>选择 Minecraft</value>
+    </data>
+  <data name="搜索版本" xml:space="preserve">
+        <value>搜索版本</value>
+    </data>
+  <data name="发布时间" xml:space="preserve">
+        <value>发布时间：</value>
+    </data>
+  <data name="步骤" xml:space="preserve">
+        <value>步骤</value>
+    </data>
+  <data name="选择 Mod 加载器" xml:space="preserve">
+        <value>选择 Mod 加载器</value>
+    </data>
+  <data name="当前选择" xml:space="preserve">
+        <value>当前选择：</value>
+    </data>
+  <data name="跳过加载器" xml:space="preserve">
+        <value>跳过加载器</value>
+    </data>
+  <data name="准备就绪" xml:space="preserve">
+        <value>准备就绪</value>
+    </data>
+  <data name="没有下载信息" xml:space="preserve">
+        <value>没有下载信息</value>
+    </data>
+  <data name="最小长度" xml:space="preserve">
+        <value>最小长度：{0}</value>
+    </data>
+  <data name="名称格式错误" xml:space="preserve">
+        <value>名称格式错误</value>
+    </data>
+  <data name="MinecraftVersionInfo" xml:space="preserve">
+        <value>Minecraft 版本信息</value>
+    </data>
+  <data name="最大长度" xml:space="preserve">
+        <value>最大长度：{0}</value>
+    </data>
+  <data name="游戏版本" xml:space="preserve">
+        <value>游戏版本</value>
+    </data>
+  <data name="加载器版本" xml:space="preserve">
+        <value>加载器版本</value>
+    </data>
+  <data name="空" xml:space="preserve">
+        <value>空</value>
+    </data>
+  <data name="版本名称" xml:space="preserve">
+        <value>版本名称</value>
+    </data>
+  <data name="后台下载" xml:space="preserve">
+        <value>后台下载</value>
+    </data>
+  <data name="退出登录" xml:space="preserve">
+        <value>退出登录</value>
+    </data>
+  <data name="版本管理" xml:space="preserve">
+        <value>版本管理</value>
+    </data>
+    <data name="视图模型实例与指定类型不匹配" xml:space="preserve">
+        <value>视图模型实例与指定类型不匹配</value>
+    </data>
+    <data name="值不能为空" xml:space="preserve">
+        <value>{0}不能为空，请指定有效的值</value>
+    </data>
+    <data name="State不能为空" xml:space="preserve">
+        <value>State 不能为空</value>
+    </data>
+    <data name="授权代码不能为空" xml:space="preserve">
+        <value>授权代码不能为空</value>
+    </data>
+    <data name="刷新Token不能为空" xml:space="preserve">
+        <value>刷新Token不能为空</value>
+    </data>
+</root>

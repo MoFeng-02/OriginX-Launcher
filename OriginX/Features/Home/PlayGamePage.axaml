@@ -1,0 +1,156 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OriginX.ViewModels"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:PlayGameViewModel"
+             x:Class="OriginX.Features.Home.PlayGamePage">
+    <UserControl.Styles>
+        <!-- 全局基础样式 -->
+        <Style Selector="Grid#MainGrid">
+            <!-- <Setter Property="Background" Value="#F8F9FA" /> -->
+        </Style>
+
+        <Style Selector="Border#AvatarBorder">
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="ClipToBounds" Value="True" />
+            <Setter Property="BorderBrush" Value="#DEE2E6" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+
+        <Style Selector="Image#AvatarImage">
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Stretch" Value="UniformToFill" />
+        </Style>
+
+        <!-- 修正Button无TextDecorations：通过Content中的TextBlock实现下划线 -->
+        <Style Selector="Button#SwitchAccountButton">
+            <Setter Property="FontSize" Value="12" />
+            <!-- <Setter Property="Foreground" Value="#495057" /> -->
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="0,3,0,0" /> <!-- 替代原Padding效果 -->
+        </Style>
+        <Style Selector="Button#SwitchAccountButton:pointerover">
+            <!-- <Setter Property="Foreground" Value="#0D6EFD" /> -->
+        </Style>
+
+
+        <!-- 核心功能区 -->
+        <Style Selector="Border#ContentContainer">
+            <Setter Property="Width" Value="400" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="25" /> <!-- Border支持Padding，替代StackPanel的Padding -->
+            <Setter Property="Background" Value="White" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="BoxShadow" Value="0 2 8 0 #00000014" />
+        </Style>
+
+        <Style Selector="TextBlock#VersionTitle">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#212529" />
+            <Setter Property="Margin" Value="0,0,0,15" />
+        </Style>
+
+        <Style Selector="StackPanel#VersionControls">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Spacing" Value="10" />
+            <Setter Property="Margin" Value="0,0,0,20" />
+        </Style>
+
+        <Style Selector="ComboBox#VersionSelector">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="34" />
+            <!-- <Setter Property="Foreground" Value="#212529" /> -->
+            <!-- <Setter Property="Background" Value="White" /> -->
+            <!-- <Setter Property="BorderBrush" Value="#DEE2E6" /> -->
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="4" />
+        </Style>
+
+        <Style Selector="Button#VersionSettingsButton">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="34" />
+            <!-- <Setter Property="Foreground" Value="#495057" /> -->
+            <!-- <Setter Property="Background" Value="#F1F3F5" /> -->
+            <!-- <Setter Property="BorderBrush" Value="Transparent" /> -->
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button#VersionSettingsButton:pointerover">
+            <Setter Property="Background" Value="#E9ECEF" />
+        </Style>
+
+        <Style Selector="Button#LaunchButton">
+            <Setter Property="Width" Value="310" />
+            <Setter Property="Height" Value="42" />
+            <Setter Property="FontSize" Value="16" />
+            <!-- <Setter Property="FontWeight" Value="Medium" /> -->
+            <!-- <Setter Property="Foreground" Value="White" /> -->
+            <!-- <Setter Property="Background" Value="#0D6EFD" /> -->
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button#LaunchButton:pointerover">
+            <!-- <Setter Property="Background" Value="#0B5ED7" /> -->
+            <!-- <Setter Property="Foreground" Value="White" /> -->
+        </Style>
+    </UserControl.Styles>
+
+    <Grid x:Name="MainGrid">
+        <!-- 账号信息区域 -->
+        <suki:GlassCard>
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto" ColumnSpacing="15">
+                <Border x:Name="AvatarBorder">
+                    <Image x:Name="AvatarImage" Source="{Binding PlayerAvatar}" />
+                </Border>
+                <suki:GroupBox Grid.Column="1" Header="{Binding PlayerName}">
+                    <Button x:Name="SwitchAccountButton"
+                            HorizontalAlignment="Left"
+                            Classes="Basic"
+                            Command="{Binding SwitchAccountCommand}">
+                        <TextBlock>
+                            <Run Text="切换账号" />
+                            <TextBlock.Styles>
+                                <Style Selector="TextBlock:pointerover">
+                                    <Setter Property="TextDecorations" Value="Underline" />
+                                </Style>
+                            </TextBlock.Styles>
+                        </TextBlock>
+                    </Button>
+                </suki:GroupBox>
+            </Grid>
+        </suki:GlassCard>
+
+        <!-- 核心功能区（用Border的Padding替代StackPanel的Padding） -->
+        <Border x:Name="ContentContainer" VerticalAlignment="Bottom" Margin="0 30">
+            <StackPanel>
+                <TextBlock x:Name="VersionTitle" Text="选择游戏版本" />
+
+                <StackPanel x:Name="VersionControls">
+                    <ComboBox x:Name="VersionSelector"
+                              ItemsSource="{Binding AvailableVersions}"
+                              SelectedItem="{Binding SelectedVersion}" />
+                    <Button x:Name="VersionSettingsButton"
+                            Content="版本设置"
+                            Command="{Binding OpenVersionSettingsCommand}" />
+                </StackPanel>
+
+                <Button x:Name="LaunchButton"
+                        Content="启动游戏"
+                        Classes="Flat Rounded"
+                        Command="{Binding LaunchGameCommand}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

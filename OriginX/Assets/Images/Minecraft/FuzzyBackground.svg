@@ -1,0 +1,26 @@
+﻿<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <!-- 创建透明模糊效果 -->
+        <filter id="backdropBlur" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <!-- 捕获背景 -->
+            <feImage xlink:href="#backgroundSource" result="bgImage"/>
+
+            <!-- 应用模糊 -->
+            <feGaussianBlur in="bgImage" stdDeviation="8" result="blurredBg"/>
+
+            <!-- 透明处理 -->
+            <feComponentTransfer in="blurredBg" result="transparentBlur">
+                <feFuncA type="linear" slope="0.7"/>
+            </feComponentTransfer>
+
+            <!-- 最终合成 -->
+            <feComposite in="SourceGraphic" in2="transparentBlur" operator="over"/>
+        </filter>
+
+        <!-- 背景源（实际使用时替换为你想要的背景） -->
+        <image id="backgroundSource" width="800" height="600" xlink:href="data:image/png;base64,..." preserveAspectRatio="xMidYMid slice"/>
+    </defs>
+
+    <!-- 应用模糊的背景区域 -->
+    <rect width="100%" height="100%" filter="url(#backdropBlur)" fill="rgba(0,0,0,0.5)"/>
+</svg>

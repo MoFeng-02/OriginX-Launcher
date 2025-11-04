@@ -1,0 +1,93 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mid="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+                 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+                 xmlns:vm="using:OriginX.ViewModels"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:models="https://github.com/kikipoulet/SukiUI"
+                 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                 x:Class="OriginX.Views.MainWindow"
+                 x:DataType="vm:PageCurrentViewModel"
+                 Icon="/Assets/Logo/OriginX.ico"
+                 Title="OriginX"
+                 Width="900" Height="550"
+                 MinWidth="720" MinHeight="550"
+                 WindowStartupLocation="CenterScreen"
+                 CanMaximize="False"
+                 BackgroundStyle="Gradient">
+    <suki:SukiWindow.LogoContent>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="0" BorderThickness="0" IsVisible="{Binding IsShowBackNavigation}" Height="24" Command="{Binding GoBackCommand}">
+                <mid:MaterialIcon Kind="ArrowLeft" Margin="0" HorizontalAlignment="Center" />
+            </Button>
+            <Svg Path="/Assets/Logo/OriginX.svg" Width="24" Height="24" />
+        </StackPanel>
+    </suki:SukiWindow.LogoContent>
+
+    <suki:SukiWindow.Hosts>
+        <suki:SukiToastHost Manager="{Binding ToastManager}" />
+        <suki:SukiDialogHost Manager="{Binding DialogManager}" />
+    </suki:SukiWindow.Hosts>
+    
+    <!-- 右侧栏处理 -->
+    
+    <suki:SukiWindow.RightWindowTitleBarControls>
+        <Button Classes="WindowControlsButton">
+            <mid:MaterialIcon Foreground="{DynamicResource SukiText}" Kind="Palette" />
+            <Button.Flyout>
+                <MenuFlyout>
+                    <Panel>
+                        <MenuItem Header="主题" Margin="0">
+                            <MenuItem Click="ThemeMenuItem_OnClick"
+                                      Header="选取颜色"
+                                      ItemsSource="{Binding Themes}">
+                                <MenuItem.DataTemplates>
+                                    <DataTemplate DataType="{x:Type models:SukiColorTheme}">
+                                        <TextBlock Foreground="{Binding PrimaryBrush}" Text="{Binding DisplayName}" />
+                                    </DataTemplate>
+                                </MenuItem.DataTemplates>
+                            </MenuItem>
+                            <MenuItem Header="-" />
+                            <MenuItem Command="{Binding CreateCustomThemeCommand}" Header="创建自定义主题色" />
+                            
+                        </MenuItem>
+                    </Panel>
+                </MenuFlyout>
+            </Button.Flyout>
+        </Button>
+    </suki:SukiWindow.RightWindowTitleBarControls>
+    <suki:SukiSideMenu ItemsSource="{Binding Navigations}"
+                       SelectedItem="{Binding CurrentRoute}"
+                       UseCustomContent="True"
+                       SelectionChanged="SelectRoute_OnSelectionChanged">
+
+        <suki:SukiSideMenu.Styles>
+            <Style Selector="Image.AppIcon">
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Opacity" Duration="0.1" />
+                    </Transitions>
+                </Setter>
+                <Style Selector="^:pointerover">
+                    <Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+                </Style>
+            </Style>
+        </suki:SukiSideMenu.Styles>
+        <suki:SukiSideMenu.Content>
+            <suki:SukiTransitioningContentControl Content="{Binding CurrentPage}" />
+        </suki:SukiSideMenu.Content>
+        <suki:SukiSideMenu.ItemTemplate>
+            <DataTemplate>
+                <suki:SukiSideMenuItem Classes="Compact" Header="{Binding DisplayName}">
+                    <suki:SukiSideMenuItem.Icon>
+                        <mid:MaterialIcon Kind="{Binding Icon}" />
+                    </suki:SukiSideMenuItem.Icon>
+                </suki:SukiSideMenuItem>
+            </DataTemplate>
+        </suki:SukiSideMenu.ItemTemplate>
+        <suki:SukiSideMenu.HeaderContent>
+            <Svg Path="/Assets/Logo/OriginX.svg" Width="160" ToolTip.Tip="Origin X 我的世界启动器" />
+        </suki:SukiSideMenu.HeaderContent>
+    </suki:SukiSideMenu>
+</suki:SukiWindow>

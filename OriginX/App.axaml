@@ -1,0 +1,17 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sukiUi="clr-namespace:SukiUI;assembly=SukiUI"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="OriginX.App"
+             RequestedThemeVariant="Default">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <!-- 引入SukiUI主题 - 这里使用深色主题作为默认 -->
+        <sukiUi:SukiTheme Locale="zh-CN" ThemeColor="Blue"  />
+        <avalonia:MaterialIconStyles />
+        <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+        <!-- 可以添加自定义样式覆盖默认值 -->
+        <!--<StyleInclude Source="avares://MinecraftLauncher/Styles.xaml"/>-->
+    </Application.Styles>
+</Application>
