@@ -7,15 +7,6 @@
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         <AssemblyName>OriginX</AssemblyName>
-		<Version>0.1.0-Alpha</Version>
-		<Authors>MF Developer</Authors>
-		<Description>一个Minecraft的Avalonia版第三方启动器</Description>
-		<PackageTags>Minecraft;Auth;Skin;Cape;Profile;Versions;Games</PackageTags>
-		<PackageProjectUrl>https://github.com/MoFeng-02/MFToolkit</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/MoFeng-02/MFToolkit</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<IncludeBuildOutput>false</IncludeBuildOutput>
-		<IncludeContentInPack>false</IncludeContentInPack>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
