@@ -21,7 +21,7 @@ using OriginX.Features.Resources.VersionManage.Datas;
 
 namespace OriginX.ViewModels.Versions;
 
-[Scoped]
+[Singleton]
 public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributable
 {
     private readonly IMinecraftVersionService minecraftVersionService;
@@ -55,7 +55,7 @@ public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributabl
     /// <summary>
     /// 搜索版本
     /// </summary>
-    [ObservableProperty] private string? _searchVersion;
+    [ObservableProperty] private string _searchVersion;
 
     /// <summary>
     /// 搜索隐藏版本类型

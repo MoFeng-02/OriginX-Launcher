@@ -1,20 +1,25 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Markup.Xaml;
+using MFToolkit.Abstractions.DependencyInjection;
 using OriginX.ViewModels.Versions;
 
 namespace OriginX.Features.Resources.VersionManage;
 
+[Singleton]
 public partial class VersionDownloadSelectPage : UserControl
 {
-    private readonly VersionDownloadViewModel _vm;
-    public VersionDownloadSelectPage(VersionDownloadViewModel vm)
+    private VersionDownloadViewModel? _vm;
+    public VersionDownloadSelectPage()
     {
-        _vm = vm;
         InitializeComponent();
     }
-    
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _vm = DataContext as VersionDownloadViewModel;
+    }
+
     /// <summary>
     /// 回车用法
     /// </summary>
@@ -24,7 +29,7 @@ public partial class VersionDownloadSelectPage : UserControl
     {
         if (e.Key == Key.Enter)
         {
-            _vm.SearchVersionMethod();
+            _vm?.SearchVersionMethod();
         }
     }
 }

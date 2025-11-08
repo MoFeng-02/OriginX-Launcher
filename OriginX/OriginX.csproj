@@ -37,8 +37,6 @@
 			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Irihi.Ursa" Version="1.13.0" />
-		<PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.13.0" />
 		<PackageReference Include="MFToolkit" Version="0.2.3-beta" />
 		<PackageReference Include="MFToolkit.Abstractions" Version="1.0.19" />
 		<PackageReference Include="MFToolkit.AutoGenerator" Version="1.0.19" />
