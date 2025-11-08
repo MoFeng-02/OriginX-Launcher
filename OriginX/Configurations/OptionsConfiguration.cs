@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
+using MFToolkit.Minecraft.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OriginX.Options.MinecraftOptions;
 
 namespace OriginX.Configurations;
 
@@ -22,11 +22,11 @@ public static class OptionsConfiguration
         var configuration = new ConfigurationBuilder()
             .SetBasePath(basePath)
             .AddJsonFile($"{nameof(StorageOptions)}.json", optional: true, reloadOnChange: true)
-            .AddJsonFile($"{nameof(LaunchOptions)}.json", optional: true, reloadOnChange: true)
+            .AddJsonFile($"{nameof(DownloadOptions)}.json", optional: true, reloadOnChange: true)
             .Build();
 
         services.Configure<StorageOptions>(configuration.GetSection(nameof(StorageOptions)));
-        services.Configure<LaunchOptions>(configuration.GetSection(nameof(LaunchOptions)));
+        services.Configure<DownloadOptions>(configuration.GetSection(nameof(DownloadOptions)));
         return services;
     }
 }

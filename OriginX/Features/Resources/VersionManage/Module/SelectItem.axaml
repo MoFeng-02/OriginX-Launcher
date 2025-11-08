@@ -1,0 +1,30 @@
+﻿<Border xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:module="clr-namespace:OriginX.Features.Resources.VersionManage.Module"
+        xmlns:lang="clr-namespace:OriginX.Language"
+        xmlns:converter="clr-namespace:OriginX.Converts"
+        x:Class="OriginX.Features.Resources.VersionManage.Module.SelectItem"
+        x:Name="This">
+        <Border.Resources>
+                <ResourceDictionary>
+                        <converter:LocalTimeConverter x:Key="LocalTimeConverter" />
+                </ResourceDictionary>
+        </Border.Resources>
+        <Grid VerticalAlignment="Stretch" ColumnDefinitions="Auto,Auto,*">
+                <module:VersionTypeToIcon Width="50" Height="50" 
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          VersionType="{Binding #This.VersionType}" />
+                <Grid Grid.Column="1" RowDefinitions="Auto,Auto" VerticalAlignment="Center" Margin="10,0,0,0">
+                        <TextBlock Text="{Binding #This.Title}" FontWeight="Bold" FontSize="20" />
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock Text="{x:Static lang:AppLang.发布时间}" FontSize="12" Foreground="Gray" />
+                                <TextBlock Text="{Binding #This.ReleaseTime,Converter={StaticResource LocalTimeConverter}}" FontSize="12" Foreground="Gray" />
+                        </StackPanel>
+                </Grid>
+                <ContentPresenter Grid.Column="2" Content="{Binding #This.RightContent}" />
+        </Grid>
+</Border>

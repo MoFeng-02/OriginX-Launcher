@@ -1,62 +1,68 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <TargetFramework>net9.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-        <ApplicationManifest>app.manifest</ApplicationManifest>
-        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-        <AssemblyName>OriginX</AssemblyName>
-    </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+		<AssemblyName>OriginX</AssemblyName>
+	</PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-        <PublishAot>true</PublishAot>
-        <PublishTrimmed>true</PublishTrimmed>
-    </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<PublishAot>true</PublishAot>
+		<PublishTrimmed>true</PublishTrimmed>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <AvaloniaResource Include="Assets\**" />
-        <Folder Include="Abstractions\" />
-        <EmbeddedResource Update="Language\AppLang.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <Folder Include="Services\" />
-    </ItemGroup>
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\**" />
+		<Folder Include="Abstractions\" />
+		<EmbeddedResource Update="Language\AppLang.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<Folder Include="Models\" />
+		<Folder Include="Services\" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Desktop" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.8" />
-        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.3.8">
-            <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-            <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-        <PackageReference Include="MFToolkit" Version="0.2.3-beta" />
-        <PackageReference Include="MFToolkit.Abstractions" Version="1.0.19" />
-        <PackageReference Include="MFToolkit.AutoGenerator" Version="1.0.19" />
-        <PackageReference Include="MFToolkit.Avaloniaui" Version="0.3.5-beta" />
-        <PackageReference Include="Material.Icons.Avalonia" Version="2.4.1" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.10" />
-        <PackageReference Include="SukiUI" Version="6.0.3" />
-        <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.6.2" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.3.8" />
+		<PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.8" />
+		<PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.1.5" />
+		<PackageReference Include="Avalonia.Desktop" Version="11.3.8" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.8" />
+		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+		<PackageReference Include="Avalonia.Diagnostics" Version="11.3.8">
+			<IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Irihi.Ursa" Version="1.13.0" />
+		<PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.13.0" />
+		<PackageReference Include="MFToolkit" Version="0.2.3-beta" />
+		<PackageReference Include="MFToolkit.Abstractions" Version="1.0.19" />
+		<PackageReference Include="MFToolkit.AutoGenerator" Version="1.0.19" />
+		<PackageReference Include="MFToolkit.Avaloniaui" Version="0.3.6-beta" />
+		<PackageReference Include="Material.Icons.Avalonia" Version="2.4.1" />
+		<PackageReference Include="MFToolkit.Minecraft" Version="0.1.0-Alpha" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.10" />
+		<PackageReference Include="SukiUI" Version="6.0.3" />
+		<PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.6.2" />
+	</ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\Minecraft\MFToolkit.Minecraft\MFToolkit.Minecraft.csproj" />
-    </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\AvaloniaUI\MFToolkit.Avaloniaui\MFToolkit.Avaloniaui.csproj" />
+		<ProjectReference Include="..\..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\Minecraft\MFToolkit.Minecraft\MFToolkit.Minecraft.csproj" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <Compile Update="Features\Resources\VersionManage\VersionManagePage.axaml.cs">
-          <DependentUpon>VersionManagePage.axaml</DependentUpon>
-        </Compile>
-        <Compile Update="Language\AppLang.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>AppLang.resx</DependentUpon>
-        </Compile>
-    </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Features\Resources\VersionManage\VersionManagePage.axaml.cs">
+			<DependentUpon>VersionManagePage.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="Language\AppLang.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AppLang.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 </Project>

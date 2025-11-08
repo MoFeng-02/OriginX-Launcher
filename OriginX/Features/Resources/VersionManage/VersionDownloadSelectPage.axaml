@@ -2,7 +2,132 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:OriginX.ViewModels.Versions"
+             xmlns:lang="clr-namespace:OriginX.Language"
+             xmlns:ursa="https://irihi.tech/ursa"
+             xmlns:mid="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             xmlns:module="clr-namespace:OriginX.Features.Resources.VersionManage.Module"
+             xmlns:minecraft="clr-namespace:MFToolkit.Minecraft.Entities.Versions;assembly=MFToolkit.Minecraft"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="OriginX.Features.Resources.VersionManage.VersionDownloadSelectPage">
-    
+             x:Class="OriginX.Features.Resources.VersionManage.VersionDownloadSelectPage"
+             x:DataType="vm:VersionDownloadViewModel">
+    <Grid RowDefinitions="Auto,Auto,*">
+        <!-- 顶部 -->
+        <Grid RowDefinitions="Auto,Auto" VerticalAlignment="Stretch" Margin="20">
+            <!-- <Svg Path="/Assets/Logo/OriginX.svg" Width="50" Height="50" HorizontalAlignment="Left" /> -->
+            <Grid>
+                <TextBlock Margin="0,0,0,0"
+                           Text="{x:Static lang:AppLang.选择_Minecraft}"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold" />
+                <TextBox Text="{Binding SearchVersion}"
+                         Width="220"
+                         Watermark="{x:Static lang:AppLang.搜索版本}"
+                         HorizontalAlignment="Right"
+                         Margin="0,0,80,0"
+                         KeyDown="InputEnter_OnKeyDown">
+                    <TextBox.InnerLeftContent>
+                        <mid:MaterialIcon Kind="Search"></mid:MaterialIcon>
+                    </TextBox.InnerLeftContent>
+                </TextBox>
+                <Button Command="{Binding RefreshCommand}"
+                        HorizontalAlignment="Right"
+                        Background="Transparent">
+                    <mid:MaterialIcon Kind="Refresh"
+                                      HorizontalAlignment="Center">
+                    </mid:MaterialIcon>
+                </Button>
+            </Grid>
+            <!-- 步骤 -->
+            <Grid Grid.Row="1" ColumnDefinitions="*,Auto"
+                  HorizontalAlignment="Stretch"
+                  Margin="0,10,0,0">
+                <suki:Stepper AlternativeStyle="True" Index="0" Steps="{Binding Steps}"></suki:Stepper>
+            </Grid>
+        </Grid>
+        <!-- 版本类型 -->
+        <Grid Grid.Row="1" IsVisible="{Binding SearchShowVersionType}" Margin="20,10,0,0">
+            <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                <RadioButton Height="40" Classes="Chips"
+                             Content="{x:Static lang:AppLang.正式版}"
+                             GroupName="R10"
+                             IsChecked="True"
+                             Command="{Binding ChangeValueCommand}"
+                             CommandParameter="release" />
+                <RadioButton Height="40" Classes="Chips"
+                             Content="{x:Static lang:AppLang.快照版}"
+                             GroupName="R10"
+                             Command="{Binding ChangeValueCommand}"
+                             CommandParameter="snapshot" />
+                <RadioButton Height="40" Classes="Chips"
+                             Content="{x:Static lang:AppLang.旧Alpha版}"
+                             GroupName="R10"
+                             Command="{Binding ChangeValueCommand}"
+                             CommandParameter="old_alpha" />
+                <RadioButton Height="40" Classes="Chips"
+                             Content="{x:Static lang:AppLang.旧测试版}"
+                             GroupName="R10"
+                             Command="{Binding ChangeValueCommand}"
+                             CommandParameter="old_beta" />
+            </StackPanel>
+        </Grid>
+        <!-- 版本列表 -->
+        <Border Grid.Row="2" Padding="0" Margin="0,10,0,0">
+            <suki:BusyArea IsBusy="{Binding Loading}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled"
+                              AllowAutoHide="False"
+                              Margin="5,0">
+                    <ItemsRepeater ItemsSource="{Binding Versions}">
+                        <!-- 布局配置 -->
+                        <ItemsRepeater.Layout>
+                            <StackLayout Orientation="Vertical"
+                                         Spacing="10" />
+                        </ItemsRepeater.Layout>
+                        <ItemsRepeater.ItemTemplate>
+                            <DataTemplate DataType="minecraft:VersionInfo">
+                                <module:SelectItem Padding="10,20"
+                                                   Classes="SelectItem"
+                                                   VersionType="{Binding VersionType}"
+                                                   Title="{Binding Id}"
+                                                   ReleaseTime="{Binding ReleaseTime}"
+                                                   Command="{Binding $parent[ItemsRepeater].((vm:VersionDownloadViewModel)DataContext).GoToVersionCommand}"
+                                                   CommandParameter="{Binding }" />
+                            </DataTemplate>
+                        </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                </ScrollViewer>
+            </suki:BusyArea>
+        </Border>
+    </Grid> <!-- 样式 -->
+    <UserControl.Styles>
+        <Style Selector="RadioButton.NoBorderBrush">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <Style Selector="RadioButton.NoBorderBrush[IsChecked=True]">
+            <Setter Property="Background" Value="#4e8ef7" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <Style Selector="module|SelectItem.SelectItem">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="RenderTransform" Value="scale(0.95)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <!-- 定义 SelectItem 的悬停缩放动画 -->
+        <Style Selector="module|SelectItem:pointerover">
+            <Setter Property="RenderTransform" Value="scale(0.98)" />
+        </Style>
+    </UserControl.Styles>
 </UserControl>

@@ -18,7 +18,8 @@
                  BackgroundStyle="Gradient">
     <suki:SukiWindow.LogoContent>
         <StackPanel Orientation="Horizontal">
-            <Button Margin="0" BorderThickness="0" IsVisible="{Binding IsShowBackNavigation}" Height="24" Command="{Binding GoBackCommand}">
+            <Button Margin="0" BorderThickness="0" IsVisible="{Binding IsShowBackNavigation}" Height="24"
+                    Command="{Binding GoBackCommand}">
                 <mid:MaterialIcon Kind="ArrowLeft" Margin="0" HorizontalAlignment="Center" />
             </Button>
             <Svg Path="/Assets/Logo/OriginX.svg" Width="24" Height="24" />
@@ -29,9 +30,9 @@
         <suki:SukiToastHost Manager="{Binding ToastManager}" />
         <suki:SukiDialogHost Manager="{Binding DialogManager}" />
     </suki:SukiWindow.Hosts>
-    
+
     <!-- 右侧栏处理 -->
-    
+
     <suki:SukiWindow.RightWindowTitleBarControls>
         <Button Classes="WindowControlsButton">
             <mid:MaterialIcon Foreground="{DynamicResource SukiText}" Kind="Palette" />
@@ -50,7 +51,7 @@
                             </MenuItem>
                             <MenuItem Header="-" />
                             <MenuItem Command="{Binding CreateCustomThemeCommand}" Header="创建自定义主题色" />
-                            
+
                         </MenuItem>
                     </Panel>
                 </MenuFlyout>
@@ -58,7 +59,7 @@
         </Button>
     </suki:SukiWindow.RightWindowTitleBarControls>
     <suki:SukiSideMenu ItemsSource="{Binding Navigations}"
-                       SelectedItem="{Binding CurrentRoute}"
+                       SelectedItem="{Binding SelectedPage}"
                        UseCustomContent="True"
                        SelectionChanged="SelectRoute_OnSelectionChanged">
 
@@ -89,5 +90,14 @@
         <suki:SukiSideMenu.HeaderContent>
             <Svg Path="/Assets/Logo/OriginX.svg" Width="160" ToolTip.Tip="Origin X 我的世界启动器" />
         </suki:SukiSideMenu.HeaderContent>
+        <!-- <suki:SukiSideMenu.FooterContent> -->
+        <!--     <Button Classes="Compact" BorderBrush="Transparent"  BorderThickness="0" Margin="10 0" -->
+        <!--             Click="GoToSettings_OnClick"> -->
+        <!--         <StackPanel Orientation="Horizontal"> -->
+        <!--             <TextBlock Text="设置" VerticalAlignment="Center" /> -->
+        <!--             <mid:MaterialIcon Kind="Settings" VerticalAlignment="Center" /> -->
+        <!--         </StackPanel> -->
+        <!--     </Button> -->
+        <!-- </suki:SukiSideMenu.FooterContent> -->
     </suki:SukiSideMenu>
 </suki:SukiWindow>

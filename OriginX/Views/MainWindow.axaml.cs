@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MFToolkit.Abstractions.DependencyInjection;
 using MFToolkit.Avaloniaui.Routes.Core.Interfaces;
+using OriginX.Features.Settings;
 using OriginX.Options.RouteOptions;
 using OriginX.ViewModels;
 using SukiUI.Controls;
@@ -41,5 +42,10 @@ public partial class MainWindow : SukiWindow
         if (e.Source is not MenuItem mItem) return;
         if (mItem.DataContext is not SukiColorTheme cTheme) return;
         vm.ChangeTheme(cTheme);
+    }
+
+    private void GoToSettings_OnClick(object? sender, RoutedEventArgs e)
+    {
+        _navigationService.GoToAsync(nameof(SettingsPage));
     }
 }

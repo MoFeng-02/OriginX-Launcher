@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Material.Icons;
@@ -9,6 +8,7 @@ using OriginX.Features.Home;
 using OriginX.Features.Resources.VersionManage;
 using OriginX.Features.Settings;
 using OriginX.Features.User;
+using OriginX.Language;
 using OriginX.ViewModels;
 using OriginX.ViewModels.Versions;
 using OriginX.Views;
@@ -196,8 +196,9 @@ public static class RouteInfoHelper
                 icon: MaterialIconKind.FileDocumentOutline,
                 isTopNavigation: true
             ),
-            new RouteInfo<VersionDownloadSelectPage, VersionDownloadViewModel>(),
-            new RouteInfo<SettingsPage>(isTopNavigation: true,displayName: "设置", icon: MaterialIconKind.Settings)
+            new RouteInfo<VersionDownloadSelectPage, VersionDownloadViewModel>(isTopNavigation: true,
+                displayName: AppLang.下载版本, icon: MaterialIconKind.Download),
+            new RouteInfo<SettingsPage>(isTopNavigation: true, displayName: "设置", icon: MaterialIconKind.Settings),
         ];
     }
 }

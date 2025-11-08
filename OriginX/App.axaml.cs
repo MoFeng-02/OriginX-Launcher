@@ -6,7 +6,7 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using MFToolkit.App;
 using MFToolkit.DependencyInjection;
-using MFToolkit.Minecraft.Extensions;
+using MFToolkit.Minecraft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using OriginX.Common.Routes.Extensions;
 using OriginX.Configurations;

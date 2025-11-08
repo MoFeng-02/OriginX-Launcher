@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Collections;
 using Avalonia.Controls;
@@ -9,9 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MFToolkit.Abstractions.DependencyInjection;
 using MFToolkit.Avaloniaui.BaseExtensions;
-using MFToolkit.Avaloniaui.Helpers;
 using MFToolkit.Avaloniaui.Routes.Core.Interfaces;
-using OriginX.Features.Home;
 using OriginX.Options.RouteOptions;
 using OriginX.ViewModels.CustomTheme;
 using OriginX.Views.CustomTheme;
@@ -60,7 +57,15 @@ public partial class PageCurrentViewModel : ViewModelBase
     /// </summary>
     [ObservableProperty] private Control? _currentPage;
 
+    /// <summary>
+    /// 当前路由信息
+    /// </summary>
     [ObservableProperty] private RouteInfo? _currentRoute;
+
+    /// <summary>
+    /// 导航顶级选择
+    /// </summary>
+    [ObservableProperty] private Control? _selectedPage;
 
     /// <summary>
     /// 是否显示背景图片
@@ -85,7 +90,9 @@ public partial class PageCurrentViewModel : ViewModelBase
         ToastManager = toastManager;
         DialogManager = dialogManager;
         Navigation = navigation;
-        Navigations = new AvaloniaList<RouteInfo>(RouteInfoHelper.RouteInfos.Where(q => q.IsTopNavigation));
+        Navigations =
+            new AvaloniaList<RouteInfo>(
+                RouteInfoHelper.RouteInfos.Where(q => q.IsTopNavigation));
 
         _theme = SukiTheme.GetInstance();
         Themes = _theme.ColorThemes;
@@ -100,15 +107,6 @@ public partial class PageCurrentViewModel : ViewModelBase
                     .Queue();
                 return; // 后面应该要改成错误地址并提供对应错误，或弹窗？
             }
-
-            if (info?.PageType == typeof(PlayGamePage))
-            {
-                IsShowBackground = true;
-                BackgroundImage ??=
-                    ImageHelper.LoadFromResource(
-                        new Uri("avares://OriginX/Assets/Minecraft/Background/minecraft_background.png"));
-            }
-
 
             CurrentPage = (Control)page;
             CurrentPage.DataContext = info!.ViewModel;

@@ -351,4 +351,16 @@
   <data name="State不能为空" xml:space="preserve">
     <value>State No Empty</value>
   </data>
+  <data name="选择版本" xml:space="preserve">
+    <value>Select Version</value>
+  </data>
+  <data name="正式版本" xml:space="preserve">
+    <value>Release Version</value>
+  </data>
+  <data name="快照版本" xml:space="preserve">
+    <value>Snapshot</value>
+  </data>
+  <data name="下载版本" xml:space="preserve">
+    <value>Download Version</value>
+  </data>
 </root>

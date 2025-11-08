@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{985E24
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFToolkit.Minecraft", "..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\Minecraft\MFToolkit.Minecraft\MFToolkit.Minecraft.csproj", "{998C2377-661D-E987-631F-A6CB17D3DB7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFToolkit.Avaloniaui", "..\..\..\ProjectLibrary\MFToolkit\MFToolkit\src\AvaloniaUI\MFToolkit.Avaloniaui\MFToolkit.Avaloniaui.csproj", "{7F066478-471B-1566-782F-016558EEF6FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{998C2377-661D-E987-631F-A6CB17D3DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F066478-471B-1566-782F-016558EEF6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F066478-471B-1566-782F-016558EEF6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F066478-471B-1566-782F-016558EEF6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F066478-471B-1566-782F-016558EEF6FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{D70F331A-DCC3-2C50-D3CF-DD92DF0120C5} = {7AEF27AB-8FA7-001E-CE53-42CF1C08BE1B}
 		{86E7623A-D01B-00FC-BD30-52E474700063} = {7AEF27AB-8FA7-001E-CE53-42CF1C08BE1B}
 		{998C2377-661D-E987-631F-A6CB17D3DB7D} = {985E24C5-1432-4FC6-B0BB-FC76885A1CE2}
+		{7F066478-471B-1566-782F-016558EEF6FD} = {985E24C5-1432-4FC6-B0BB-FC76885A1CE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78D1377C-6FF5-4BD3-A608-E4B74CD6D0F8}
