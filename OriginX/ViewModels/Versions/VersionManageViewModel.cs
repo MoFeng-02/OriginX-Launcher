@@ -28,7 +28,7 @@ public partial class VersionManageViewModel : PageViewModel
     /// <summary>
     /// 当前选择版本
     /// </summary>
-    [ObservableProperty] private GameVersionInfo? _currentVersion;
+    [ObservableProperty] private GameVersionDetail? _currentVersion;
 
     
 

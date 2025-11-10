@@ -258,4 +258,10 @@
     <data name="下载版本" xml:space="preserve">
         <value>下载版本</value>
     </data>
+    <data name="前往下载" xml:space="preserve">
+        <value>前往下载</value>
+    </data>
+    <data name="保存名称" xml:space="preserve">
+        <value>保存名称</value>
+    </data>
 </root>

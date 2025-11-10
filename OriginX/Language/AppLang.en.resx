@@ -363,4 +363,10 @@
   <data name="下载版本" xml:space="preserve">
     <value>Download Version</value>
   </data>
+  <data name="前往下载" xml:space="preserve">
+    <value>Go To Download</value>
+  </data>
+  <data name="保存名称" xml:space="preserve">
+    <value>Save Name</value>
+  </data>
 </root>

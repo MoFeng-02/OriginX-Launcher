@@ -8,16 +8,11 @@ namespace OriginX.Features.Resources.VersionManage;
 [Singleton]
 public partial class VersionDownloadSelectPage : UserControl
 {
-    private VersionDownloadViewModel? _vm;
-    public VersionDownloadSelectPage()
+    private readonly VersionDownloadSelectViewModel _vm;
+    public VersionDownloadSelectPage(VersionDownloadSelectViewModel vm)
     {
         InitializeComponent();
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _vm = DataContext as VersionDownloadViewModel;
+        _vm = vm;
     }
 
     /// <summary>
@@ -29,7 +24,7 @@ public partial class VersionDownloadSelectPage : UserControl
     {
         if (e.Key == Key.Enter)
         {
-            _vm?.SearchVersionMethod();
+            _vm.SearchVersionMethod();
         }
     }
 }

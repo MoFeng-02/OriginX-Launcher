@@ -8,7 +8,6 @@ using CommunityToolkit.Mvvm.Input;
 using MFToolkit.Abstractions.DependencyInjection;
 using MFToolkit.Avaloniaui.Routes.Core.Abstractions;
 using MFToolkit.Avaloniaui.Routes.Core.Interfaces;
-using MFToolkit.Minecraft.Entities.GameVersion;
 using MFToolkit.Minecraft.Entities.Versions;
 using MFToolkit.Minecraft.Enums;
 using MFToolkit.Minecraft.Extensions;
@@ -17,31 +16,25 @@ using MFToolkit.Minecraft.Services.Downloads.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OriginX.Abstractions;
+using OriginX.Features.Resources.VersionManage;
 using OriginX.Features.Resources.VersionManage.Datas;
 
 namespace OriginX.ViewModels.Versions;
 
 [Singleton]
-public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributable
+public partial class VersionDownloadSelectViewModel : PageViewModel, IQueryAttributable
 {
     private readonly IMinecraftVersionService minecraftVersionService;
     private readonly INavigationService navigationService;
-    private readonly ILogger<VersionDownloadViewModel> _logger;
-    private readonly CurrentDownloadInfo currentDownloadInfo;
+    private readonly ILogger<VersionDownloadSelectViewModel> _logger;
 
-    private readonly IOptionsMonitor<StorageOptions> storageOptions;
-
-    public VersionDownloadViewModel(IMinecraftVersionService minecraftVersionService,
+    public VersionDownloadSelectViewModel(IMinecraftVersionService minecraftVersionService,
         INavigationService navigationService,
-        ILogger<VersionDownloadViewModel> logger,
-        CurrentDownloadInfo currentDownloadInfo,
-        IOptionsMonitor<StorageOptions> storageOptions)
+        ILogger<VersionDownloadSelectViewModel> logger)
     {
         this.minecraftVersionService = minecraftVersionService;
         this.navigationService = navigationService;
-        this._logger = logger;
-        this.currentDownloadInfo = currentDownloadInfo;
-        this.storageOptions = storageOptions;
+        _logger = logger;
     }
 
 
@@ -55,7 +48,7 @@ public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributabl
     /// <summary>
     /// 搜索版本
     /// </summary>
-    [ObservableProperty] private string _searchVersion;
+    [ObservableProperty] private string? _searchVersion;
 
     /// <summary>
     /// 搜索隐藏版本类型
@@ -142,10 +135,13 @@ public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributabl
     /// </summary>
     /// <param name="version"></param>
     [RelayCommand]
-    private async Task GoToVersionAsync(GameVersionInfo version)
+    private async Task GoToVersionAsync(VersionInfo version)
     {
         _logger.LogInformation("执行一次跳转选择加载器版本页面");
-        await navigationService.GoToAsync("download/" + version.Id + "/" + version.Type);
+        await navigationService.GoToAsync<VersionDownloadSelectModLoaderPage>(new Dictionary<string, object?>
+        {
+            { "version", version }
+        });
     }
 
     /// <summary>
@@ -199,47 +195,4 @@ public partial class VersionDownloadViewModel : PageViewModel, IQueryAttributabl
 
         Loading = false;
     }
-}
-
-/// <summary>
-/// 当前下载选择信息
-/// </summary>
-[Singleton]
-public class CurrentDownloadInfo
-{
-    #region 原版
-
-    /// <summary>
-    /// 当前选择版本信息
-    /// </summary>
-    public GameVersionInfo? MinecraftVersion { get; set; }
-
-    #endregion
-
-    #region Mod loader 加载器
-
-    /// <summary>
-    /// 加载器信息，字典处理
-    /// </summary>
-    public Dictionary<string, string> LoaderInfo { get; set; } = [];
-
-    /// <summary>
-    /// 设置加载器主要信息
-    /// </summary>
-    /// <param name="loaderName"></param>
-    /// <param name="loaderVersion"></param>
-    public void SetLoaderInfo(string loaderName, string loaderVersion)
-    {
-        LoaderInfo[loaderName] = loaderVersion;
-    }
-
-    /// <summary>
-    /// 清理当前选择的加载器信息
-    /// </summary>
-    public void ClearLoaderInfo()
-    {
-        LoaderInfo.Clear();
-    }
-
-    #endregion
 }

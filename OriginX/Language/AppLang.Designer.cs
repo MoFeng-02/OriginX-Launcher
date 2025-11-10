@@ -150,6 +150,15 @@ namespace OriginX.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 保存名称.
+        /// </summary>
+        public static string 保存名称 {
+            get {
+                return ResourceManager.GetString("保存名称", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}不能为空，请指定有效的值.
         /// </summary>
         public static string 值不能为空 {
@@ -236,6 +245,15 @@ namespace OriginX.Language {
         public static string 刷新Token不能为空 {
             get {
                 return ResourceManager.GetString("刷新Token不能为空", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 前往下载.
+        /// </summary>
+        public static string 前往下载 {
+            get {
+                return ResourceManager.GetString("前往下载", resourceCulture);
             }
         }
         

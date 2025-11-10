@@ -6,12 +6,13 @@
              xmlns:lang="clr-namespace:OriginX.Language"
              xmlns:ursa="https://irihi.tech/ursa"
              xmlns:mid="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:theme="clr-namespace:SukiUI.Theme;assembly=SukiUI"
              xmlns:suki="https://github.com/kikipoulet/SukiUI"
              xmlns:module="clr-namespace:OriginX.Features.Resources.VersionManage.Module"
              xmlns:minecraft="clr-namespace:MFToolkit.Minecraft.Entities.Versions;assembly=MFToolkit.Minecraft"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OriginX.Features.Resources.VersionManage.VersionDownloadSelectPage"
-             x:DataType="vm:VersionDownloadViewModel">
+             x:DataType="vm:VersionDownloadSelectViewModel">
     <Grid RowDefinitions="Auto,Auto,*">
         <!-- 顶部 -->
         <Grid RowDefinitions="Auto,Auto" VerticalAlignment="Stretch" Margin="20">
@@ -93,7 +94,7 @@
                                                    VersionType="{Binding VersionType}"
                                                    Title="{Binding Id}"
                                                    ReleaseTime="{Binding ReleaseTime}"
-                                                   Command="{Binding $parent[ItemsRepeater].((vm:VersionDownloadViewModel)DataContext).GoToVersionCommand}"
+                                                   Command="{Binding $parent[ItemsRepeater].((vm:VersionDownloadSelectViewModel)DataContext).GoToVersionCommand}"
                                                    CommandParameter="{Binding }" />
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>

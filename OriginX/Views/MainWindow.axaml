@@ -14,7 +14,6 @@
                  Width="900" Height="550"
                  MinWidth="720" MinHeight="550"
                  WindowStartupLocation="CenterScreen"
-                 CanMaximize="False"
                  BackgroundStyle="Gradient">
     <suki:SukiWindow.LogoContent>
         <StackPanel Orientation="Horizontal">

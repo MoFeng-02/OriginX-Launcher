@@ -1,0 +1,93 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvm="clr-namespace:OriginX.ViewModels.Versions.Modules"
+             xmlns:download="clr-namespace:MFToolkit.Minecraft.Entities.Downloads;assembly=MFToolkit.Minecraft"
+             xmlns:convert="clr-namespace:OriginX.Converts"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="OriginX.Features.Resources.VersionManage.Module.DownloadItems"
+             x:DataType="mvm:DownloadItemsViewModel">
+    <UserControl.Resources>
+        <convert:StringToFileNameConverter x:Key="StringToFileNameConverter" />
+        <convert:StatusToColorConverter x:Key="StatusToColorConverter" />
+    </UserControl.Resources>
+
+    <Border Background="White" Padding="15" Margin="10" CornerRadius="15" ClipToBounds="True">
+        <Grid RowDefinitions="Auto,*">
+            <Border Grid.Row="1" Padding="5">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled"
+                              AllowAutoHide="False">
+                    <ItemsControl ItemsSource="{Binding DownloadProgress}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <!-- <DataTemplate DataType="download:MinecraftDownloadProgress"> -->
+                            <!--     <Border Padding="10" Height="80"> -->
+                            <!--         <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto"> -->
+                            <!--             ~1~ 文件名 @1@ -->
+                            <!--             <TextBlock -->
+                            <!--                 Text="{Binding SavePath, Converter={StaticResource StringToFileNameConverter}}" -->
+                            <!--                 FontWeight="Bold" Grid.Column="0" Grid.Row="0" -->
+                            <!--                 TextTrimming="CharacterEllipsis" /> -->
+                            <!-- -->
+                            <!--             ~1~ 进度条 @1@ -->
+                            <!--             <ProgressBar Value="{Binding Progress}" Maximum="100" Margin="0 5" -->
+                            <!--                          Grid.Column="0" Grid.Row="1" Height="10"> -->
+                            <!--                 <ProgressBar.Styles> -->
+                            <!--                     <Style Selector="ProgressBar:indeterminate"> -->
+                            <!--                         <Setter Property="IsIndeterminate" Value="False" /> -->
+                            <!--                     </Style> -->
+                            <!--                 </ProgressBar.Styles> -->
+                            <!--             </ProgressBar> -->
+                            <!-- -->
+                            <!--             ~1~ 状态信息 @1@ -->
+                            <!--             <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="10 0 0 0"> -->
+                            <!--                 <TextBlock Text="{Binding DownloadStatus}" -->
+                            <!--                            Foreground="{Binding DownloadStatus, Converter={StaticResource StatusToColorConverter}}" -->
+                            <!--                            FontWeight="Bold" /> -->
+                            <!--                 <TextBlock Text="{Binding Progress, StringFormat='{}{0}%'}" /> -->
+                            <!--             </StackPanel> -->
+                            <!-- -->
+                            <!--             ~1~ 错误信息 @1@ -->
+                            <!--             <TextBlock Text="{Binding Error}" Foreground="Red" TextWrapping="Wrap" -->
+                            <!--                        Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0 5 0 0" -->
+                            <!--                        MaxHeight="40" /> -->
+                            <!--         </Grid> -->
+                            <!--     </Border> -->
+                            <!-- </DataTemplate> -->
+                            <DataTemplate DataType="download:MinecraftDownloadProgress">
+                                <!-- 进一步简化的模板 -->
+                                <Border Padding="8" Height="60" Background="Transparent">
+                                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                                        <!-- 文件名 -->
+                                        <TextBlock Text="{Binding SavePath, Converter={StaticResource StringToFileNameConverter}}"
+                                                   FontWeight="SemiBold" Grid.Column="0" Grid.Row="0"
+                                                   TextTrimming="CharacterEllipsis" />
+                    
+                                        <!-- 状态和进度 -->
+                                        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Spacing="8">
+                                            <TextBlock Text="{Binding DownloadStatus}"
+                                                       Foreground="{Binding DownloadStatus, Converter={StaticResource StatusToColorConverter}}"
+                                                       FontWeight="SemiBold" />
+                                            <TextBlock Text="{Binding Progress, StringFormat='{}{0}%'}" />
+                                        </StackPanel>
+                    
+                                        <!-- 进度条 -->
+                                        <ProgressBar Value="{Binding Progress}" Maximum="100" 
+                                                     Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                                                     Height="6" Margin="0 4 0 0" />
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

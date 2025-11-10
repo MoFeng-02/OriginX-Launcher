@@ -196,9 +196,11 @@ public static class RouteInfoHelper
                 icon: MaterialIconKind.FileDocumentOutline,
                 isTopNavigation: true
             ),
-            new RouteInfo<VersionDownloadSelectPage, VersionDownloadViewModel>(isTopNavigation: true,
+            new RouteInfo<VersionDownloadSelectPage, VersionDownloadSelectViewModel>(isTopNavigation: true,
                 displayName: AppLang.下载版本, icon: MaterialIconKind.Download),
             new RouteInfo<SettingsPage>(isTopNavigation: true, displayName: "设置", icon: MaterialIconKind.Settings),
+            new RouteInfo<VersionDownloadSelectModLoaderPage, VersionDownloadSelectModLoaderViewModel>(),
+            new RouteInfo<VersionDownloadCurrentPage, VersionDownloadCurrentViewModel>(),
         ];
     }
 }
