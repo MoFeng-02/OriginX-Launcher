@@ -7,6 +7,7 @@ using Avalonia.Markup.Xaml;
 using MFToolkit.App;
 using MFToolkit.DependencyInjection;
 using MFToolkit.Minecraft.Extensions.DependencyInjection;
+using MFToolkit.Minecraft.Services.Java.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using OriginX.Common.Routes.Extensions;
 using OriginX.Configurations;
@@ -33,14 +34,10 @@ public partial class App : Application
         services.AddAutoInjectServices();
         services.AddRoutes();
         services.AddSingleton<ISukiToastManager, SukiToastManager>();
-        services.AddSingleton<ISukiDialogManager, SukiDialogManager>(); 
-        services.AddMinecraftServices(options =>
-        {
-            options.ClientId = "你的ClientId";
-        });
+        services.AddSingleton<ISukiDialogManager, SukiDialogManager>();
+        services.AddMinecraftServices(options => { options.ClientId = "你的ClientId"; });
         // 进行内部DI注入，最后注入因为内部有ServiceProvider的构建使用
         services.AddInjectServices();
-
         // DataTemplates.Add(new ViewLocator(views));
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

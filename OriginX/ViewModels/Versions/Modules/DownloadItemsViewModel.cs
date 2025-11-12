@@ -11,6 +11,9 @@ using MFToolkit.Minecraft.Services.Downloads.Interfaces;
 using OriginX.Abstractions;
 using System.Collections.Specialized;
 using System.Linq;
+using MFToolkit.Minecraft.Entities.GameVersion;
+using MFToolkit.Minecraft.Extensions.VersionExtensions;
+using OriginX.Services.VersionServices.Interfaces;
 
 namespace OriginX.ViewModels.Versions.Modules;
 
@@ -18,12 +21,14 @@ namespace OriginX.ViewModels.Versions.Modules;
 public partial class DownloadItemsViewModel : PageViewModel
 {
     private readonly IMinecraftDownloadService _downloadService;
+    private readonly IVersionManage _versionManage;
     private bool _isBatchUpdating = false;
     private bool isSetEvent = false;
 
-    public DownloadItemsViewModel(IMinecraftDownloadService downloadService)
+    public DownloadItemsViewModel(IMinecraftDownloadService downloadService, IVersionManage versionManage)
     {
         _downloadService = downloadService;
+        _versionManage = versionManage;
 
         // 使用包装的集合来减少通知频率
         DownloadProgress = [];
@@ -95,8 +100,14 @@ public partial class DownloadItemsViewModel : PageViewModel
         StorageOptions? storageOptions = null)
     {
         _downloadService.ModLoaderType = modLoaderType;
+        _downloadService.CompletedInfoAction = async (detail) =>
+        {
+            await _versionManage.SaveVersionDetailAsync(detail);
+            // gameVersionDetail.GetGameArguments()
+        };
         await _downloadService.StartDownloadAsync(versionInfo, versionName, storageOptions);
     }
+
 
     protected void OnDeactivated()
     {

@@ -1,5 +1,6 @@
 using System;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using MFToolkit.Abstractions.DependencyInjection;
 using MFToolkit.Avaloniaui.Routes.Core.Interfaces;
@@ -47,5 +48,17 @@ public partial class MainWindow : SukiWindow
     private void GoToSettings_OnClick(object? sender, RoutedEventArgs e)
     {
         _navigationService.GoToAsync(nameof(SettingsPage));
+    }
+
+    protected override void OnPointerPressed(PointerPressedEventArgs e)
+    {
+        if (e.Properties.IsXButton1Pressed)
+        {
+            if (_navigationService.CanGoBack())
+            {
+                _navigationService.GoBackAsync();
+            }
+        }
+        base.OnPointerPressed(e);
     }
 }

@@ -13,6 +13,7 @@ using MFToolkit.Minecraft.Enums;
 using MFToolkit.Minecraft.Extensions;
 using MFToolkit.Minecraft.Options;
 using MFToolkit.Minecraft.Services.Downloads.Interfaces;
+using MFToolkit.Minecraft.Services.Java.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OriginX.Abstractions;
@@ -27,14 +28,16 @@ public partial class VersionDownloadSelectViewModel : PageViewModel, IQueryAttri
     private readonly IMinecraftVersionService minecraftVersionService;
     private readonly INavigationService navigationService;
     private readonly ILogger<VersionDownloadSelectViewModel> _logger;
+    private readonly IJavaService javaService;
 
     public VersionDownloadSelectViewModel(IMinecraftVersionService minecraftVersionService,
         INavigationService navigationService,
-        ILogger<VersionDownloadSelectViewModel> logger)
+        ILogger<VersionDownloadSelectViewModel> logger, IJavaService javaService)
     {
         this.minecraftVersionService = minecraftVersionService;
         this.navigationService = navigationService;
         _logger = logger;
+        this.javaService = javaService;
     }
 
 
@@ -137,6 +140,7 @@ public partial class VersionDownloadSelectViewModel : PageViewModel, IQueryAttri
     [RelayCommand]
     private async Task GoToVersionAsync(VersionInfo version)
     {
+        // var javas = await javaService.FindAllJavaInstallationsAsync();
         _logger.LogInformation("执行一次跳转选择加载器版本页面");
         await navigationService.GoToAsync<VersionDownloadSelectModLoaderPage>(new Dictionary<string, object?>
         {

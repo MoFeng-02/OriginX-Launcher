@@ -1,6 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Controls;
 using MFToolkit.Abstractions.DependencyInjection;
 
 namespace OriginX.Features.Resources.VersionManage;
